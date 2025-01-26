@@ -67,9 +67,7 @@
         </div>
     </div>
 </div>
-<audio id="backgroundMusic" loop autoplay>
-    <source src="./music/Soundtet2025.mp3"> Trình duyệt của bạn không hỗ trợ nguồn âm thanh.
-</audio>
+
 </div>
     <script>
         var canvas = document.getElementById("cas");
@@ -78,7 +76,7 @@
         canvas.height = window.innerHeight;
         var bigbooms = [];
 
-        var fireworkSound = new Audio('nmba.mp3');
+        var fireworkSound = new Audio('./music/Soundtet2025.mp3');
 
         function initAnimate() {
             lastTime = new Date();
