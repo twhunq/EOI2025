@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fireworks</title>
+    <title>EOI 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         html,
@@ -29,7 +29,7 @@
         .button-container {
             display: none;
             background-color: #acacac00;
-            background-image: url("2025.png");
+            background-image: url("./image/thiep.png");
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,18 +66,26 @@
             <p id="line4"></p>
         </div>
     </div>
-</div>
+    <button onclick="playMusic()">Play Music</button>
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="./music/Soundtet2025.mp3" type="audio/mpeg">
+        <source src="./music/Soundtet2025.ogg" type="audio/ogg">
+        Trình duyệt của bạn không hỗ trợ nguồn âm thanh.
+    </audio>
+</body>
+<script>
+    var canvas = document.getElementById("cas");
+    var ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var bigbooms = [];
 
-</div>
-    <script>
-        var canvas = document.getElementById("cas");
-        var ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        var bigbooms = [];
+    var fireworkSound = new Audio('./sound/Soundtet2025.mp3');
+    var backgroundMusic = document.getElementById("backgroundMusic");
 
-        var fireworkSound = new Audio('./music/Soundtet2025.mp3');
-
+    function playMusic() {
+        backgroundMusic.play();
+    }
         function initAnimate() {
             lastTime = new Date();
             setTimeout(function () {
